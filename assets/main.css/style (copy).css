@@ -1,0 +1,272 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: #0077cc;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #005fa3;
+}
+
+.hero {
+    text-align: center;
+    margin: 20px;
+}
+
+.buttons .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.buttons .btn:hover {
+    background-color: #005fa3;
+}
+
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="tel"],
+form select,
+form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+form table th,
+form table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+form table th {
+    background-color: #f0f0f0;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #005fa3;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Mobielvriendelijk */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    form table, form table thead, form table tbody, form table th, form table td, form table tr {
+        display: block;
+    }
+
+    form table tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #eee;
+    }
+
+    form table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    form table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+    }
+}
+/* Order form container */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Sushi items */
+form > div.flex {
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+/* Afwisselende achtergrondkleur voor rijen */
+form > div.flex:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+form > div.flex:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+/* Hover effect */
+form > div.flex:hover {
+    background-color: #e0f7fa;
+}
+
+/* Afbeeldingen van de rollen */
+form img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Knoppen en input velden */
+input[type="number"], input[type="text"], input[type="tel"], select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 80px;
+    text-align: center;
+}
+
+input[type="text"], input[type="tel"], select {
+    width: 100%;
+    text-align: left;
+}
+
+/* Submit button */
+button[type="submit"] {
+    background-color: #38a169;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2f855a;
+}
+
+/* Titel en secties */
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+    color: #1a202c;
+}
+
+p {
+    margin: 6px 0;
+    line-height: 1.4;
+    color: #4a5568;
+}
+/* Sushi item styling */
+.sushi-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.sushi-item img {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.sushi-info h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #1a202c;
+}
+
+.sushi-info p {
+    margin: 5px 0;
+}
+
+.sushi-info .price {
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sushi-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sushi-item img {
+        width: 80%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+

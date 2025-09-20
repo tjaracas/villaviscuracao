@@ -1,0 +1,39 @@
+---
+layout: default
+lang: en
+title: Villavis Home
+---
+
+<!-- Header afbeelding -->
+<div style="text-align:center; margin-bottom:2em;">
+  <img src="{{ '/assets/images/placeholder.jpg' | relative_url }}" 
+       alt="Villavis Header" 
+       style="width:100%; max-width:1200px; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+</div>
+
+<!-- Drie knoppen -->
+<div style="text-align:center; margin-bottom:2em;">
+  <a href="{{ '/en/menu.html' | relative_url }}" class="btn">Villavis Menu</a>
+  <a href="{{ '/en/sushi.html' | relative_url }}" class="btn">Sushi</a>
+  <a href="{{ '/en/location.html' | relative_url }}" class="btn">Location</a>
+</div>
+
+<style>
+.btn {
+    background-color: #0077aa;
+    color: white;
+    padding: 0.8em 1.5em;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 0.5em;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+.btn:hover {
+    background-color: #005577;
+    transform: translateY(-2px);
+}
+</style>
+

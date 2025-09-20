@@ -1,0 +1,226 @@
+/* ------------------------------
+   Algemene body & nav styling
+--------------------------------*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: #0077cc;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #005fa3;
+}
+
+/* ------------------------------
+   Hero & buttons
+--------------------------------*/
+.hero, .buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.buttons .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.buttons .btn:hover {
+    background-color: #005fa3;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------
+   Form layout
+--------------------------------*/
+form {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="tel"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* ------------------------------
+   Order table
+--------------------------------*/
+.order-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.order-table th {
+    text-align: left;
+    padding: 10px;
+    background-color: #0077aa;
+    color: white;
+    border-radius: 5px;
+}
+
+.order-table td {
+    padding: 10px;
+    vertical-align: middle;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+}
+
+.order-table tr:nth-child(even) td {
+    background-color: #e6f2f7;
+}
+
+/* Sushi item layout */
+.order-table td.rol {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-table td.rol img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.order-table td.rol div {
+    padding: 5px;
+    display: inline-block;
+}
+
+/* Hover effect voor rijen */
+.order-table tbody tr {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.order-table tbody tr:hover {
+    background-color: #d0eef7;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------
+   Buttons
+--------------------------------*/
+button[type="submit"], .btn {
+    background-color: #0077aa;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover, .btn:hover {
+    background-color: #005577;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------
+   Totaalprijs
+--------------------------------*/
+#total-price {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ------------------------------
+   Headings
+--------------------------------*/
+h1, h2 {
+    font-family: Arial, sans-serif;
+    color: #1a202c;
+    text-align: center;
+}
+
+p {
+    margin: 6px 0;
+    line-height: 1.4;
+    color: #4a5568;
+    text-align: center;
+}
+
+/* ------------------------------
+   Responsive
+--------------------------------*/
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .order-table td.rol {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .order-table td.rol img {
+        width: 80%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    input[type="number"] {
+        width: 50px;
+    }
+}
+

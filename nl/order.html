@@ -1,0 +1,268 @@
+---
+layout: default
+lang: nl
+title: Online Bestellen – Sushi
+---
+
+<h1 style="text-align:center; margin-bottom:1em;">Online Bestellen – Sushi 🍣</h1>
+<p style="text-align:center; margin-bottom:2em;">Kies je favoriete rollen, vul je gegevens in en plaats je bestelling. Bezorging binnen: Brakkeput, Zuurzak, Jan Thiel, Jan Sofat.</p>
+
+<form action="https://formspree.io/f/xvgbnley" method="POST" style="max-width:800px; margin:0 auto;">
+  <input type="hidden" name="_next" value="{{ '/thanks.html' | relative_url }}">
+  <input type="hidden" name="_subject" value="Nieuwe Sushi Bestelling">
+  <input type="hidden" name="_captcha" value="false">
+
+  <table class="order-table">
+    <thead>
+      <tr>
+        <th>Rol</th>
+        <th>Prijs</th>
+        <th>Aantal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- VillaVis Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/villavis-roll-thumb.jpg' | relative_url }}" alt="VillaVis Roll">
+          <div>
+            <strong>VillaVis Roll</strong><br>
+            Rauwe tonijn, tempura-garnaal, avocado en roomkaas gewikkeld in zwarte rijst, getopt met zalm-tempura, sesamzaadjes, pittige mayo en VillaVis saus.
+          </div>
+        </td>
+        <td>35 XCG</td>
+        <td><input type="number" name="items[VillaVis Roll]" min="0" value="0" data-price="35" class="item-qty"></td>
+      </tr>
+
+      <!-- Philadelphia Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/philadelphia-roll-thumb.jpg' | relative_url }}" alt="Philadelphia Roll">
+          <div>
+            <strong>Philadelphia Roll</strong><br>
+            Rauwe zalm en roomkaas gewikkeld in nori en rijst, getopt met avocado en sesamzaadjes.
+          </div>
+        </td>
+        <td>29 XCG</td>
+        <td><input type="number" name="items[Philadelphia Roll]" min="0" value="0" data-price="29" class="item-qty"></td>
+      </tr>
+
+      <!-- Pau Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/pau-roll-thumb.jpg' | relative_url }}" alt="Pau Roll">
+          <div>
+            <strong>Pau Roll</strong><br>
+            Tempura-garnaal en avocado gewikkeld in nori en rijst, getopt met geflambeerde zalm, eel sauce en tempuravlokken.
+          </div>
+        </td>
+        <td>35 XCG</td>
+        <td><input type="number" name="items[Pau Roll]" min="0" value="0" data-price="35" class="item-qty"></td>
+      </tr>
+
+      <!-- Angels' Hair Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/angelshair-roll-thumb.jpg' | relative_url }}" alt="Angels' Hair Roll">
+          <div>
+            <strong>Angels' Hair Roll</strong><br>
+            Tempura-garnaal en avocado gewikkeld in nori en rijst, getopt met krabmix, krokante krab en eel sauce.
+          </div>
+        </td>
+        <td>33 XCG</td>
+        <td><input type="number" name="items[Angels' Hair Roll]" min="0" value="0" data-price="33" class="item-qty"></td>
+      </tr>
+
+      <!-- Ebi Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/ebi-roll-thumb.jpg' | relative_url }}" alt="Ebi Roll">
+          <div>
+            <strong>Ebi Roll</strong><br>
+            Tempura-garnaal met avocado gewikkeld in nori en rijst, getopt met een mix van tempura-garnaal, zeewier, VillaVis saus en sesamzaadjes.
+          </div>
+        </td>
+        <td>33 XCG</td>
+        <td><input type="number" name="items[Ebi Roll]" min="0" value="0" data-price="33" class="item-qty"></td>
+      </tr>
+
+      <!-- California Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/california-roll-thumb.jpg' | relative_url }}" alt="California Roll">
+          <div>
+            <strong>California Roll</strong><br>
+            Krab en avocado gewikkeld in nori en rijst, getopt met masago en een beetje pittige mayo.
+          </div>
+        </td>
+        <td>28 XCG</td>
+        <td><input type="number" name="items[California Roll]" min="0" value="0" data-price="28" class="item-qty"></td>
+      </tr>
+
+      <!-- Kani Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/kani-roll-thumb.jpg' | relative_url }}" alt="Kani Roll">
+          <div>
+            <strong>Kani Roll</strong><br>
+            Tempura-garnaal en avocado gewikkeld in nori en rijst, getopt met tempura-garnaaltjes, krab, zeewier, VillaVis saus en sesamzaadjes.
+          </div>
+        </td>
+        <td>33 XCG</td>
+        <td><input type="number" name="items[Kani Roll]" min="0" value="0" data-price="33" class="item-qty"></td>
+      </tr>
+
+      <!-- Spicy Tuna Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/spicy-tuna-roll-thumb.jpg' | relative_url }}" alt="Spicy Tuna Roll">
+          <div>
+            <strong>Spicy Tuna Roll</strong><br>
+            Tonijn gewikkeld in rijst, getopt met pittige tonijnmix en zeewier. Optioneel met avocado of mild.
+          </div>
+        </td>
+        <td>28 XCG</td>
+        <td><input type="number" name="items[Spicy Tuna Roll]" min="0" value="0" data-price="28" class="item-qty"></td>
+      </tr>
+
+      <!-- Crab Roll -->
+      <tr>
+        <td class="rol">
+          <img src="{{ '/assets/images/crab-roll-thumb.jpg' | relative_url }}" alt="Crab Roll">
+          <div>
+            <strong>Crab Roll</strong><br>
+            Krab en avocado gewikkeld in nori en rijst, getopt met een mix van zeewier, krab en sesamzaadjes.
+          </div>
+        </td>
+        <td>28 XCG</td>
+        <td><input type="number" name="items[Crab Roll]" min="0" value="0" data-price="28" class="item-qty"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Klantgegevens -->
+  <label>Naam:</label>
+  <input type="text" name="name" required>
+
+  <label>Adres:</label>
+  <input type="text" name="address" required>
+
+  <label>Telefoonnummer:</label>
+  <input type="tel" name="phone" required>
+
+  <label>Bezorgzone:</label>
+  <select name="zone" required>
+    <option value="">Kies een zone</option>
+    <option value="Brakkeput">Brakkeput</option>
+    <option value="Zuurzak">Zuurzak</option>
+    <option value="Jan Thiel">Jan Thiel</option>
+    <option value="Jan Sofat">Jan Sofat</option>
+  </select>
+
+  <!-- Totaalprijs -->
+  <p style="text-align:center; font-weight:bold; font-size:1.2em;">Totaal: <span id="total-price">0 XCG</span></p>
+
+  <div style="text-align:center; margin-top:2em;">
+    <button type="submit" class="btn">Bestelling Verzenden</button>
+  </div>
+</form>
+
+<script>
+const qtyInputs = document.querySelectorAll('.item-qty');
+const totalPriceEl = document.getElementById('total-price');
+
+function updateTotal() {
+    let total = 0;
+    qtyInputs.forEach(input => {
+        const price = parseInt(input.dataset.price);
+        const qty = parseInt(input.value) || 0;
+        total += price * qty;
+    });
+    totalPriceEl.textContent = total + ' XCG';
+}
+
+qtyInputs.forEach(input => input.addEventListener('input', updateTotal));
+updateTotal();
+</script>
+
+<style>
+.order-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin-bottom: 20px;
+}
+
+.order-table th {
+    text-align: left;
+    padding: 10px;
+    background-color: #0077aa;
+    color: white;
+    border-radius: 5px;
+}
+
+.order-table td {
+    padding: 10px;
+    vertical-align: middle;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+}
+
+.order-table tr:nth-child(even) td {
+    background-color: #e6f2f7;
+}
+
+.order-table td.rol {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-table td.rol img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Mobiel */
+@media (max-width: 768px) {
+    .order-table td.rol {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .order-table td.rol img {
+        width: 80%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+.btn {
+    background-color: #0077aa;
+    color: white;
+    padding: 0.8em 1.5em;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #005577;
+    transform: translateY(-2px);
+}
+
+input[type="number"], input[type="text"], input[type="tel"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+</style>
+

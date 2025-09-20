@@ -1,0 +1,41 @@
+---
+layout: default
+lang: nl
+title: Menu Villavis
+---
+
+<h1 style="text-align:center;">Menu Villavis 🐟</h1>
+<p style="text-align:center;">Bekijk hier ons volledige menu van verse visgerechten, bijgerechten en specials.</p>
+
+<!-- Menu afbeelding gecentreerd en 100% breed -->
+<div style="text-align:center; margin: 2em 0;">
+  <img src="{{ '/assets/images/menu.jpg' | relative_url }}" 
+       alt="Menu Villavis" 
+       style="width:100%; max-width:1200px; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+</div>
+
+<!-- Knoppen gecentreerd -->
+<div style="text-align:center; margin-top:1.5em;">
+  <!-- Terug naar Home binnen dezelfde taal -->
+  <a href="{{ '/nl/' | relative_url }}" class="btn">Terug naar Home</a>
+</div>
+
+<style>
+.btn {
+    background-color: #0077aa;
+    color: white;
+    padding: 0.8em 1.5em;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 0.5em;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+.btn:hover {
+    background-color: #005577;
+    transform: translateY(-2px);
+}
+</style>
+

@@ -1,0 +1,58 @@
+---
+layout: default
+lang: en
+title: Sushi
+---
+
+<h1 style="text-align:center; margin-bottom:1em;">Sushi at Villavis 🍣</h1>
+<p style="text-align:center; margin-bottom:2em;">Enjoy our fresh sushi, expertly prepared by our chef.</p>
+
+<!-- Large image with overlay buttons -->
+<div style="position: relative; text-align: center; margin-bottom: 2em;">
+  <img src="{{ '/assets/images/placeholder.jpg' | relative_url }}" 
+       alt="Villavis Sushi" 
+       style="width:100%; max-width:1200px; height:auto; border-radius:10px; display:block; margin:0 auto;">
+
+  <!-- Overlay buttons -->
+  <div style="
+      position:absolute;
+      top:20%;
+      left:50%;
+      transform:translate(-50%, -20%);
+      display:flex;
+      gap:1em;
+      flex-wrap: wrap;
+      justify-content:center;
+      ">
+    <a href="{{ '/en/sushi-menu.html' | relative_url }}" class="btn" style="
+        background-color: rgba(0, 119, 170, 0.85);
+        color:white;
+        padding: 0.8em 1.5em;
+        border-radius: 8px;
+        font-weight:bold;
+        text-decoration:none;
+        box-shadow:0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    ">Sushi Menu</a>
+
+    <a href="{{ '/en/order.html' | relative_url }}" class="btn" style="
+        background-color: rgba(0, 119, 170, 0.85);
+        color:white;
+        padding: 0.8em 1.5em;
+        border-radius: 8px;
+        font-weight:bold;
+        text-decoration:none;
+        box-shadow:0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    ">Order Online</a>
+  </div>
+</div>
+
+<style>
+/* Hover effect for buttons */
+.btn:hover {
+    background-color: rgba(0, 119, 170, 1);
+    transform: translateY(-2px);
+}
+</style>
+

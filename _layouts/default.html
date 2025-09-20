@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    header img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    header .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #0077aa;
+      padding: 0.5em;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5em;
+      background: #f0f0f0;
+      margin-top: 2em;
+      font-size: 0.9em;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      padding: 1em 2em;
+      margin: 1em;
+      background: #0077aa;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #005577;
+    }
+    .lang-switch {
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="{{ "/assets/images/header.jpg" | relative_url }}" alt="Villavis Restaurant">
+    <div class="title">{{ site.title }}</div>
+  </header>
+
+  <nav>
+    {% if page.lang == "nl" %}
+      <a href="{{ "/nl/" | relative_url }}">Home</a>
+      <a href="{{ "/nl/menu.html" | relative_url }}">Menu</a>
+      <a href="{{ "/nl/sushi.html" | relative_url }}">Sushi</a>
+      <a href="{{ "/nl/order.html" | relative_url }}">Bestellen</a>
+      <a href="{{ "/nl/location.html" | relative_url }}">Locatie</a>
+    {% elsif page.lang == "en" %}
+      <a href="{{ "/en/" | relative_url }}">Home</a>
+      <a href="{{ "/en/menu.html" | relative_url }}">Menu</a>
+      <a href="{{ "/en/sushi.html" | relative_url }}">Sushi</a>
+      <a href="{{ "/en/order.html" | relative_url }}">Order</a>
+      <a href="{{ "/en/location.html" | relative_url }}">Location</a>
+    {% endif %}
+
+    <!-- taalwissel knop -->
+    <div class="lang-switch">
+      {% if page.lang == "nl" %}
+        <a href="{{ page.url | replace:'/nl/','/en/' }}">English</a>
+      {% else %}
+        <a href="{{ page.url | replace:'/en/','/nl/' }}">Nederlands</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    {% if page.lang == "nl" %}
+      &copy; {{ site.title }} {{ site.time | date: "%Y" }} – Alle rechten voorbehouden
+    {% else %}
+      &copy; {{ site.title }} {{ site.time | date: "%Y" }} – All rights reserved
+    {% endif %}
+  </footer>
+</body>
+</html>
+
+
