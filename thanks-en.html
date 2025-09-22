@@ -1,0 +1,58 @@
+---
+layout: default
+lang: en
+title: Thank You for Your Order
+---
+
+<div style="max-width:800px; margin:0 auto; text-align:center;">
+
+  <!-- EN Versie (zichtbaar bij laden) -->
+  <div id="en-thanks" style="display:block;">
+    <h1>Thank you for your order! 🍣</h1>
+    <p>We have received your order and will contact you shortly.</p>
+    <p>Wil je de Nederlandse versie bekijken? <a href="#" id="switch-nl">Click here</a></p>
+  </div>
+
+  <!-- NL Versie (verborgen bij laden) -->
+  <div id="nl-thanks" style="display:none;">
+    <h1>Bedankt voor je bestelling! 🍣</h1>
+    <p>We hebben je bestelling ontvangen en nemen zo snel mogelijk contact met je op.</p>
+    <p>Wil je de Engelse versie bekijken? <a href="#" id="switch-en">Klik hier</a></p>
+  </div>
+
+</div>
+
+<script>
+const nlDiv = document.getElementById('nl-thanks');
+const enDiv = document.getElementById('en-thanks');
+
+document.getElementById('switch-en').addEventListener('click', e => {
+    e.preventDefault();
+    nlDiv.style.display = 'none';
+    enDiv.style.display = 'block';
+});
+
+document.getElementById('switch-nl').addEventListener('click', e => {
+    e.preventDefault();
+    enDiv.style.display = 'none';
+    nlDiv.style.display = 'block';
+});
+</script>
+
+<style>
+#nl-thanks, #en-thanks {
+    padding: 2em;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 2em;
+}
+#nl-thanks a, #en-thanks a {
+    color: #0077aa;
+    font-weight: bold;
+    text-decoration: none;
+}
+#nl-thanks a:hover, #en-thanks a:hover {
+    text-decoration: underline;
+}
+</style>
