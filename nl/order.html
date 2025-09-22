@@ -7,11 +7,7 @@ title: Online Bestellen – Sushi
 <h1 style="text-align:center; margin-bottom:1em;">Online Bestellen – Sushi 🍣</h1>
 <p style="text-align:center; margin-bottom:2em;">Kies je favoriete rollen, vul je gegevens in en plaats je bestelling. Bezorging binnen: Brakkeput, Zuurzak, Jan Thiel, Jan Sofat.</p>
 
-<form action="https://formspree.io/f/xvgbnley" method="POST" style="max-width:800px; margin:0 auto;">
-  <input type="hidden" name="_next" value="{{ '/thanks.html' | relative_url }}">
-  <input type="hidden" name="_subject" value="Nieuwe Sushi Bestelling">
-  <input type="hidden" name="_captcha" value="false">
-
+<form id="order-form" style="max-width:800px; margin:0 auto;">
   <table class="order-table">
     <thead>
       <tr>
@@ -142,16 +138,16 @@ title: Online Bestellen – Sushi
 
   <!-- Klantgegevens -->
   <label>Naam:</label>
-  <input type="text" name="name" required>
+  <input type="text" name="name" id="customer-name" required>
 
   <label>Adres:</label>
-  <input type="text" name="address" required>
+  <input type="text" name="address" id="customer-address" required>
 
   <label>Telefoonnummer:</label>
-  <input type="tel" name="phone" required>
+  <input type="tel" name="phone" id="customer-phone" required>
 
   <label>Bezorgzone:</label>
-  <select name="zone" required>
+  <select name="zone" id="customer-zone" required>
     <option value="">Kies een zone</option>
     <option value="Brakkeput">Brakkeput</option>
     <option value="Zuurzak">Zuurzak</option>
@@ -163,13 +159,44 @@ title: Online Bestellen – Sushi
   <p style="text-align:center; font-weight:bold; font-size:1.2em;">Totaal: <span id="total-price">0 XCG</span></p>
 
   <div style="text-align:center; margin-top:2em;">
-    <button type="submit" class="btn">Bestelling Verzenden</button>
+    <button type="button" class="btn" id="preview-btn">Bestelling Overzicht</button>
   </div>
 </form>
+
+<!-- Preview / bevestiging -->
+<div id="preview" style="display:none; max-width:800px; margin:0 auto;">
+  <h2>Overzicht Bestelling</h2>
+  <table class="order-table" id="preview-table">
+    <thead>
+      <tr>
+        <th>Rol</th>
+        <th>Aantal</th>
+        <th>Prijs</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <label>Opmerkingen / speciale wensen:</label>
+<textarea id="remarks" name="remarks" rows="4" 
+    placeholder="Bijvoorbeeld: geen avocado, geen Philadelphia kaas, geen wakame, geen pittige saus, extra rijst, etc." 
+    style="width:100%; padding:8px; border-radius:5px; border:1px solid #ccc; color:#333;"></textarea>
+
+
+  <p style="font-weight:bold; font-size:1.2em;">Totaal: <span id="preview-total">0 XCG</span></p>
+  <div style="text-align:center; margin-top:2em;">
+    <button type="button" class="btn" id="confirm-btn">Bevestig Bestelling</button>
+  </div>
+</div>
 
 <script>
 const qtyInputs = document.querySelectorAll('.item-qty');
 const totalPriceEl = document.getElementById('total-price');
+const previewBtn = document.getElementById('preview-btn');
+const previewDiv = document.getElementById('preview');
+const previewTableBody = document.querySelector('#preview-table tbody');
+const previewTotal = document.getElementById('preview-total');
+const confirmBtn = document.getElementById('confirm-btn');
+const orderForm = document.getElementById('order-form');
 
 function updateTotal() {
     let total = 0;
@@ -180,9 +207,56 @@ function updateTotal() {
     });
     totalPriceEl.textContent = total + ' XCG';
 }
-
 qtyInputs.forEach(input => input.addEventListener('input', updateTotal));
 updateTotal();
+
+previewBtn.addEventListener('click', () => {
+    // Maak preview tabel
+    previewTableBody.innerHTML = '';
+    let total = 0;
+    qtyInputs.forEach(input => {
+        const qty = parseInt(input.value) || 0;
+        if (qty > 0) {
+            const price = parseInt(input.dataset.price);
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${input.name.match(/\[(.*)\]/)[1]}</td><td>${qty}</td><td>${price*qty} XCG</td>`;
+            previewTableBody.appendChild(row);
+            total += price*qty;
+        }
+    });
+    previewTotal.textContent = total + ' XCG';
+    orderForm.style.display = 'none';
+    previewDiv.style.display = 'block';
+});
+
+confirmBtn.addEventListener('click', () => {
+    // Verzenden naar Formspree
+    const formData = new FormData();
+    qtyInputs.forEach(input => {
+        const qty = parseInt(input.value) || 0;
+        if (qty > 0) formData.append(input.name, qty);
+    });
+    formData.append('name', document.getElementById('customer-name').value);
+    formData.append('address', document.getElementById('customer-address').value);
+    formData.append('phone', document.getElementById('customer-phone').value);
+    formData.append('zone', document.getElementById('customer-zone').value);
+    formData.append('remarks', document.getElementById('remarks').value);
+    formData.append('_subject','Nieuwe Sushi Bestelling');
+    formData.append('_captcha','false');
+    formData.append('_next','{{ "/thanks.html" | relative_url }}');
+
+    fetch('https://formspree.io/f/xvgbnley', {
+        method: 'POST',
+        body: formData,
+        headers: {'Accept': 'application/json'}
+    }).then(response => {
+        if (response.ok) {
+            window.location.href = '{{ "/thanks.html" | relative_url }}';
+        } else {
+            alert('Er is iets misgegaan bij het verzenden. Probeer opnieuw.');
+        }
+    });
+});
 </script>
 
 <style>
@@ -192,7 +266,6 @@ updateTotal();
     border-spacing: 0 10px;
     margin-bottom: 20px;
 }
-
 .order-table th {
     text-align: left;
     padding: 10px;
@@ -200,31 +273,26 @@ updateTotal();
     color: white;
     border-radius: 5px;
 }
-
 .order-table td {
     padding: 10px;
     vertical-align: middle;
     background-color: #f7f7f7;
     border-radius: 5px;
 }
-
 .order-table tr:nth-child(even) td {
     background-color: #e6f2f7;
 }
-
 .order-table td.rol {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .order-table td.rol img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 8px;
 }
-
 /* Mobiel */
 @media (max-width: 768px) {
     .order-table td.rol {
@@ -232,14 +300,12 @@ updateTotal();
         align-items: center;
         text-align: center;
     }
-
     .order-table td.rol img {
         width: 80%;
         height: auto;
         margin-bottom: 10px;
     }
 }
-
 .btn {
     background-color: #0077aa;
     color: white;
@@ -251,13 +317,11 @@ updateTotal();
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: 0.3s;
 }
-
 .btn:hover {
     background-color: #005577;
     transform: translateY(-2px);
 }
-
-input[type="number"], input[type="text"], input[type="tel"], select {
+input[type="number"], input[type="text"], input[type="tel"], select, textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 1em;
@@ -265,4 +329,3 @@ input[type="number"], input[type="text"], input[type="tel"], select {
     border: 1px solid #ccc;
 }
 </style>
-
