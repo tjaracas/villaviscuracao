@@ -4,185 +4,38 @@ lang: en
 title: Online Order – Sushi
 ---
 
-<h1 style="text-align:center; margin-bottom:1em;">Online Order – Sushi 🍣</h1>
-<p style="text-align:center; margin-bottom:2em;">Choose your favorite dishes, fill in your details, and place your order. Only Pick-up at VillaVis Restaurant.</p>
+<section style="max-width:900px; margin:0 auto; text-align:center; padding:2em 1em;">
 
-<form id="order-form" style="max-width:800px; margin:0 auto;">
-  <table class="order-table">
-    <thead>
-      <tr>
-        <th>Dish</th>
-        <th>Price</th>
-        <th>Quantity</th>
-      </tr>
-    </thead>
-    <tbody>
+  <h1 style="margin-bottom:0.5em;">Online Order – Sushi 🍣</h1>
 
-      <!-- VillaVis Roll -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/villavis-roll-thumb.jpg' | relative_url }}">
-          <div><strong>VillaVis Roll</strong><br>Raw tuna, tempura shrimp, avocado and cream cheese wrapped in black rice, topped with salmon tempura, sesame seeds, spicy mayo, and VillaVis sauce.</div>
-        </td>
-        <td>35 XCG</td>
-        <td><input type="number" name="items[VillaVis Roll]" min="0" value="0" data-price="35" class="item-qty"></td>
-      </tr>
+  <p style="font-size:1.1em; margin-bottom:1.5em;">
+    Online ordering will be available soon.
+  </p>
 
-      <!-- Philadelphia -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/philadelphia-roll-thumb.jpg' | relative_url }}">
-          <div><strong>Philadelphia Roll</strong><br>Raw salmon and cream cheese wrapped in nori and rice, topped with avocado and sesame.</div>
-        </td>
-        <td>29 XCG</td>
-        <td><input type="number" name="items[Philadelphia Roll]" min="0" value="0" data-price="29" class="item-qty"></td>
-      </tr>
+  <p style="margin-bottom:2em;">
+    For actual online ordering, please use the button below.
+  </p>
 
-      <!-- Pau -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/pau-roll-thumb.jpg' | relative_url }}">
-          <div><strong>Pau Roll</strong><br>Tempura shrimp and avocado, topped with flamed salmon and eel sauce.</div>
-        </td>
-        <td>35 XCG</td>
-        <td><input type="number" name="items[Pau Roll]" min="0" value="0" data-price="35" class="item-qty"></td>
-      </tr>
+  <a href="https://JOUW-BESTEL-URL-HIER.com"
+     target="_blank"
+     rel="noopener"
+     style="
+       display:inline-block;
+       background:#00bcd4;
+       color:#000;
+       padding:14px 28px;
+       border-radius:8px;
+       text-decoration:none;
+       font-weight:bold;
+       margin-bottom:2em;
+     ">
+    Order Online
+  </a>
 
-      <!-- Angels -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/angelshair-roll-thumb.jpg' | relative_url }}">
-          <div><strong>Angels' Hair Roll</strong><br>Tempura shrimp topped with crab mix and eel sauce.</div>
-        </td>
-        <td>33 XCG</td>
-        <td><input type="number" name="items[Angels' Hair Roll]" min="0" value="0" data-price="33" class="item-qty"></td>
-      </tr>
+  <div style="margin-top:2em;">
+    <img src="{{ '/assets/images/coming-soon.jpg' | relative_url }}"
+         alt="Coming Soon"
+         style="max-width:100%; height:auto; border-radius:12px;">
+  </div>
 
-      <!-- Ebi -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/ebi-roll-thumb.jpg' | relative_url }}">
-          <div><strong>Ebi Roll</strong><br>Tempura shrimp topped with seaweed and VillaVis sauce.</div>
-        </td>
-        <td>33 XCG</td>
-        <td><input type="number" name="items[Ebi Roll]" min="0" value="0" data-price="33" class="item-qty"></td>
-      </tr>
-
-      <!-- California -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/california-roll-thumb.jpg' | relative_url }}">
-          <div><strong>California Roll</strong><br>Crab and avocado topped with masago.</div>
-        </td>
-        <td>28 XCG</td>
-        <td><input type="number" name="items[California Roll]" min="0" value="0" data-price="28" class="item-qty"></td>
-      </tr>
-
-      <!-- Kani -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/kani-roll-thumb.jpg' | relative_url }}">
-          <div><strong>Kani Roll</strong><br>Tempura shrimp topped with crab and sesame.</div>
-        </td>
-        <td>33 XCG</td>
-        <td><input type="number" name="items[Kani Roll]" min="0" value="0" data-price="33" class="item-qty"></td>
-      </tr>
-
-      <!-- Spicy Tuna -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/spicy-tuna-roll-thumb.jpg' | relative_url }}">
-          <div><strong>Spicy Tuna Roll</strong><br>Tuna with spicy mix.</div>
-        </td>
-        <td>28 XCG</td>
-        <td><input type="number" name="items[Spicy Tuna Roll]" min="0" value="0" data-price="28" class="item-qty"></td>
-      </tr>
-
-      <!-- Crab Roll -->
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/crab-roll-thumb.jpg' | relative_url }}">
-          <div><strong>Crab Roll</strong><br>Crab and avocado topped with sesame.</div>
-        </td>
-        <td>28 XCG</td>
-        <td><input type="number" name="items[Crab Roll]" min="0" value="0" data-price="28" class="item-qty"></td>
-      </tr>
-
-      <!-- NEW DISHES -->
-
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/sushi-taco-thumb.jpg' | relative_url }}">
-          <div><strong>Sushi Taco Trilogy</strong><br>3 crispy wonton tacos with tuna, salmon and crab.</div>
-        </td>
-        <td>32 XCG</td>
-        <td><input type="number" name="items[Sushi Taco Trilogy]" data-price="32" class="item-qty"></td>
-      </tr>
-
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/tuna-crispy-rice-thumb.jpg' | relative_url }}">
-          <div><strong>Tuna Crispy Rice</strong><br>Crispy rice topped with spicy tuna.</div>
-        </td>
-        <td>32.5 XCG</td>
-        <td><input type="number" name="items[Tuna Crispy Rice]" data-price="32.5" class="item-qty"></td>
-      </tr>
-
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/crab-salad-thumb.jpg' | relative_url }}">
-          <div><strong>Crab Salad</strong><br>Avocado with crab salad.</div>
-        </td>
-        <td>20 XCG</td>
-        <td><input type="number" name="items[Crab Salad]" data-price="20" class="item-qty"></td>
-      </tr>
-
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/calamari-thumb.jpg' | relative_url }}">
-          <div><strong>Calamari Rings</strong><br>Served with VillaVis sauce.</div>
-        </td>
-        <td>24 XCG</td>
-        <td><input type="number" name="items[Calamari Rings]" data-price="24" class="item-qty"></td>
-      </tr>
-
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/tuna-ceviche-thumb.jpg' | relative_url }}">
-          <div><strong>Tuna Ceviche</strong><br>Fresh tuna with lime and avocado.</div>
-        </td>
-        <td>27.5 XCG</td>
-        <td><input type="number" name="items[Tuna Ceviche]" data-price="27.5" class="item-qty"></td>
-      </tr>
-
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/tuna-tartare-thumb.jpg' | relative_url }}">
-          <div><strong>Tuna Tartare</strong><br>Raw tuna with avocado.</div>
-        </td>
-        <td>25 XCG</td>
-        <td><input type="number" name="items[Tuna Tartare]" data-price="25" class="item-qty"></td>
-      </tr>
-
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/wakame-crab-thumb.jpg' | relative_url }}">
-          <div><strong>Wakame Crab Salad</strong><br>Seaweed and crab salad.</div>
-        </td>
-        <td>15 XCG</td>
-        <td><input type="number" name="items[Wakame Crab Salad]" data-price="15" class="item-qty"></td>
-      </tr>
-
-      <tr>
-        <td class="rol">
-          <img src="{{ '/assets/images/edamame-thumb.jpg' | relative_url }}">
-          <div><strong>Edamame</strong><br>Steamed soybeans.</div>
-        </td>
-        <td>15 XCG</td>
-        <td><input type="number" name="items[Edamame]" data-price="15" class="item-qty"></td>
-      </tr>
-
-    </tbody>
-  </table>
-
-<!-- rest van je originele form + JS blijft hetzelfde -->
+</section>
