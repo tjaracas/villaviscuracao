@@ -9,16 +9,23 @@ title: Online Order – Sushi
   <h1 style="margin-bottom:0.5em;">Online Bestelling – Sushi 🍣</h1>
 
   <p style="font-size:1.1em; margin-bottom:1.5em;">
-    Online ordering voor het sushi is vanaf nu beschikbaar. Haal je bestelling op bij VillaVis Restaurant.  Er kan geen vis online besteld worden. 
+    Online bestellen van sushi is vanaf nu beschikbaar.
+    Haal je bestelling op bij VillaVis Restaurant.
+    Er kan geen vis online besteld worden.
   </p>
 
   <p style="margin-bottom:2em;">
-    Gebruik om te bestellen onderstaande knop.
+    Gebruik onderstaande knop om te bestellen.
   </p>
 
   <a href="https://butl.nl/zPKzB"
      target="_blank"
      rel="noopener"
+     onclick="gtag('event','order_click',{
+       event_category:'Online Order',
+       event_label:'Butlaroo',
+       value:1
+     });"
      style="
        display:inline-block;
        background:#00bcd4;
@@ -31,7 +38,5 @@ title: Online Order – Sushi
      ">
     Order Online
   </a>
-
-
 
 </section>
