@@ -1,5 +1,6 @@
+```css
 /* ------------------------------
-   Algemene body & nav styling
+Algemene body & nav styling
 --------------------------------*/
 body {
     font-family: Arial, sans-serif;
@@ -34,10 +35,12 @@ nav a:hover {
     background-color: #005fa3;
 }
 
+
 /* ------------------------------
-   Hero & buttons
+Hero & buttons
 --------------------------------*/
-.hero, .buttons {
+.hero,
+.buttons {
     text-align: center;
     margin: 20px 0;
 }
@@ -60,8 +63,83 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+
 /* ------------------------------
-   Form layout
+Homepage hero image
+--------------------------------*/
+.hero-image {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto 2em auto;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+/* ------------------------------
+Online Sushi button op hero foto
+--------------------------------*/
+.sushi-order-button {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background-color: rgba(0, 0, 0, 0.82);
+    color: #ffffff !important;
+
+    border: 2px solid #d6b36a;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.45);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.sushi-order-button:hover {
+    background-color: #d6b36a;
+    color: #000000 !important;
+
+    transform: translateX(-50%) scale(1.05);
+
+    box-shadow: 0 7px 22px rgba(0,0,0,0.55);
+}
+
+
+/* ------------------------------
+Homepage buttons
+--------------------------------*/
+.home-buttons {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+
+/* ------------------------------
+Form layout
 --------------------------------*/
 form {
     max-width: 900px;
@@ -78,7 +156,9 @@ form label {
     font-weight: bold;
 }
 
-input[type="text"], input[type="tel"], select {
+input[type="text"],
+input[type="tel"],
+select {
     width: 100%;
     padding: 8px;
     margin-bottom: 1em;
@@ -94,8 +174,9 @@ input[type="number"] {
     text-align: center;
 }
 
+
 /* ------------------------------
-   Order table
+Order table
 --------------------------------*/
 .order-table {
     width: 100%;
@@ -122,6 +203,7 @@ input[type="number"] {
     background-color: #e6f2f7;
 }
 
+
 /* Sushi item layout */
 .order-table td.rol {
     display: flex;
@@ -142,6 +224,7 @@ input[type="number"] {
     display: inline-block;
 }
 
+
 /* Hover effect voor rijen */
 .order-table tbody tr {
     transition: background-color 0.3s, transform 0.2s;
@@ -152,10 +235,12 @@ input[type="number"] {
     transform: translateY(-2px);
 }
 
+
 /* ------------------------------
-   Buttons
+Buttons
 --------------------------------*/
-button[type="submit"], .btn {
+button[type="submit"],
+.btn {
     background-color: #0077aa;
     color: white;
     padding: 12px 24px;
@@ -168,13 +253,15 @@ button[type="submit"], .btn {
     transition: 0.3s;
 }
 
-button[type="submit"]:hover, .btn:hover {
+button[type="submit"]:hover,
+.btn:hover {
     background-color: #005577;
     transform: translateY(-2px);
 }
 
+
 /* ------------------------------
-   Totaalprijs
+Totaalprijs
 --------------------------------*/
 #total-price {
     font-weight: bold;
@@ -183,10 +270,12 @@ button[type="submit"]:hover, .btn:hover {
     margin-top: 20px;
 }
 
+
 /* ------------------------------
-   Headings
+Headings
 --------------------------------*/
-h1, h2 {
+h1,
+h2 {
     font-family: Arial, sans-serif;
     color: #1a202c;
     text-align: center;
@@ -199,10 +288,12 @@ p {
     text-align: center;
 }
 
+
 /* ------------------------------
-   Responsive
+Responsive
 --------------------------------*/
 @media (max-width: 768px) {
+
     nav ul {
         flex-direction: column;
     }
@@ -218,9 +309,22 @@ p {
         height: auto;
         margin-bottom: 10px;
     }
-    
+
     input[type="number"] {
         width: 50px;
     }
-}
 
+    .sushi-order-button {
+        top: 20px;
+        padding: 11px 18px;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+    }
+
+    .home-buttons .btn {
+        margin: 5px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+```
