@@ -19,10 +19,175 @@ title: Villavis Home
 
 </div>
 
-<!-- Three buttons -->
+<!-- Three buttons below the image -->
 <div class="home-buttons">
   <a href="{{ '/en/menu.html' | relative_url }}" class="btn">Villavis Menu</a>
   <a href="{{ '/en/sushi.html' | relative_url }}" class="btn">Sushi</a>
   <a href="{{ '/en/location.html' | relative_url }}" class="btn">Location</a>
 </div>
 
+
+<style>
+
+/* =========================================
+   HOMEPAGE HERO IMAGE
+   ========================================= */
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 2em auto;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.20);
+}
+
+
+/* =========================================
+   ONLINE SUSHI BUTTON ON HERO IMAGE
+   ========================================= */
+
+.sushi-order-button {
+    position: absolute;
+
+    /* Top center of the image */
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    /* Dark transparent background */
+    background: rgba(0,0,0,0.82);
+
+    color: #ffffff !important;
+
+    /* Gold border */
+    border: 2px solid #d6b36a;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.45);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Online Sushi button hover effect */
+
+.sushi-order-button:hover {
+    background: #d6b36a;
+
+    color: #000000 !important;
+
+    transform:
+        translateX(-50%)
+        scale(1.05);
+
+    box-shadow:
+        0 7px 22px rgba(0,0,0,0.55);
+}
+
+
+/* =========================================
+   THREE BUTTONS BELOW THE IMAGE
+   ========================================= */
+
+.home-buttons {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+
+/* Villavis buttons */
+
+.btn {
+    background-color: #0077aa;
+
+    color: white;
+
+    padding: 0.8em 1.5em;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    margin: 0 0.5em;
+
+    display: inline-block;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.30);
+
+    transition: 0.3s;
+}
+
+
+/* Button hover */
+
+.btn:hover {
+    background-color: #005577;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .hero-image {
+        margin-bottom: 1.5em;
+    }
+
+    .sushi-order-button {
+        top: 20px;
+
+        padding: 11px 18px;
+
+        font-size: 14px;
+
+        letter-spacing: 0.2px;
+    }
+
+    .btn {
+        padding: 0.7em 1em;
+
+        margin: 0.3em;
+
+        font-size: 14px;
+    }
+}
+
+</style>
